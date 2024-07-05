@@ -6,9 +6,9 @@ function Home() {
   const [quotesList, setQuotesList] = useState([]);
 
   useEffect(() => {
-    // Load saved quotes from local storage
     const savedQuotes = JSON.parse(localStorage.getItem('quotesList')) || [];
     setQuotesList(savedQuotes);
+    fetchQuotes();
   }, []);
 
   const fetchQuotes = async () => {
